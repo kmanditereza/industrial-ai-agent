@@ -2,15 +2,11 @@
 
 Build an intelligent AI agent that automates production decisions in industrial batch plants using Python, LangChain, and OPC UA.
 
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
-[![LangChain](https://img.shields.io/badge/LangChain-Latest-green)](https://www.langchain.com/)
-[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
-
 ## 📺 Video Tutorial
 
 This project is part of a comprehensive video tutorial series by Kudzai Manditereza on building agentic AI for industrial systems.
 
-🎥 **[Watch the Tutorial: How to Build an Industrial AI Agent From Scratch](YOUR_YOUTUBE_LINK_HERE)**
+🎥 **[Watch the Tutorial: How to Build an Industrial AI Agent From Scratch](https://youtu.be/8CRXdrqPjgU)**
 
 ## 🎯 Overview
 
@@ -114,43 +110,6 @@ DB_HOST=localhost
 DB_PORT=5432
 ```
 
-5. **Database Setup**
-Create the required database schema:
-```sql
-CREATE DATABASE plantdb;
-
--- Create tables
-CREATE TABLE products (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(100) NOT NULL
-);
-
-CREATE TABLE raw_materials (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    tank_number INTEGER NOT NULL
-);
-
-CREATE TABLE product_recipes (
-    id SERIAL PRIMARY KEY,
-    product_id INTEGER REFERENCES products(id),
-    material_id INTEGER REFERENCES raw_materials(id),
-    quantity DECIMAL(10,2) NOT NULL
-);
-```
-
-## ⚙️ Configuration
-
-### OPC UA Server Configuration
-Update the server URL and node IDs in `batch_plant_functions.py`:
-```python
-SERVER_URL = "opc.tcp://your-server:26543/BatchPlantServer"
-
-TANK1_LEVEL_NODE_ID = "ns=2;i=328"
-TANK2_LEVEL_NODE_ID = "ns=2;i=352"
-TANK3_LEVEL_NODE_ID = "ns=2;i=376"
-```
-
 ### LLM Selection
 In `main.py`, choose your preferred LLM:
 ```python
@@ -247,14 +206,6 @@ industrial-ai-agent/
 5. **Analysis**: LLM compares requirements vs. availability
 6. **Decision**: Agent provides go/no-go decision with detailed reasoning
 
-## 🚧 Roadmap
-
-This is Part 1 of a 5-part series. Upcoming features include:
-
-- [ ] **Part 2**: Deploy local LLMs for edge computing
-- [ ] **Part 3**: Add predictive maintenance capabilities
-- [ ] **Part 4**: Implement multi-agent systems for complex decisions
-- [ ] **Part 5**: Build production optimization algorithms
 
 ## 🤝 Contributing
 
@@ -281,13 +232,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For questions, suggestions, or collaboration opportunities:
 
-- YouTube: [Kudzai Manditereza](YOUR_YOUTUBE_CHANNEL)
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your LinkedIn](YOUR_LINKEDIN)
+- LinkedIn: [Your LinkedIn](https://www.linkedin.com/in/kudzaimanditereza/)
+- YouTube: [Kudzai Manditereza](https://www.youtube.com/@industry40tvonline)
+
 
 ## 🔗 Links
 
-- [Video Tutorial](YOUR_YOUTUBE_LINK)
+- [Video Tutorial](https://www.youtube.com/@industry40tvonline)
 - [LangChain Documentation](https://python.langchain.com/)
 - [OPC UA Specification](https://opcfoundation.org/)
 - [Anthropic Claude API](https://docs.anthropic.com/)
